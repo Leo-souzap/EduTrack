@@ -12,7 +12,8 @@
 
     <div class="container my-5">
         <h1 class="mb-4">Gerenciamento de Alunos</h1>
-        <button class="btn btn-primary mb-3" onclick="addStudent()">Adicionar Aluno</button>
+        <button class="btn btn-primary mb-3" onclick="showAddStudentModal()">Adicionar Aluno</button>
+        
         <table class="table table-striped">
             <thead class="table-dark">
                 <tr>
@@ -24,35 +25,43 @@
                 </tr>
             </thead>
             <tbody id="student-list">
+                <!-- Lista de alunos será preenchida pelo JavaScript -->
             </tbody>
         </table>
     </div>
 
+    <!-- Modal para adicionar/editar aluno -->
+    <div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="studentModalLabel">Adicionar Aluno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="student-form">
+                        <input type="hidden" id="student-id">
+                        <div class="mb-3">
+                            <label for="student-name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="student-name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="student-age" class="form-label">Idade</label>
+                            <input type="number" class="form-control" id="student-age" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="student-course" class="form-label">Curso</label>
+                            <input type="text" class="form-control" id="student-course" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="footer-container"></div>
 
-    <script>
-        // Função para carregar o conteúdo do navbar
-        function loadNavbar() {
-            fetch('../components/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar-container').innerHTML = data;
-                });
-        }
-
-        function loadFooter() {
-            fetch('../components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer-container').innerHTML = data;
-                });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            loadNavbar();
-            loadFooter();
-        });
-    </script>
     <script src="../js/modules/studentsManager.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
