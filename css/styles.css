@@ -1,5 +1,7 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -19,4 +21,14 @@ header h1 {
 
 footer {
     background-color: #343a40;
+}
+
+.btn-primary {
+    font-size: 1rem; /* Ajuste o tamanho da fonte se necessário */
+    padding: 10px 20px; /* Ajuste o padding para tamanho menor */
+}
+
+.btn-primary h3 {
+    margin: 0; /* Remove margens extras no título */
+    font-size: 1.25rem; /* Ajuste o tamanho da fonte do título */
 }
