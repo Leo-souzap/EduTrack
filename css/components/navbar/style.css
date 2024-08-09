@@ -1,0 +1,9 @@
+.navbar-logo {
+    height: 50px; 
+    width: auto;  
+    margin-right: 15px; 
+}
+
+.navbar-nav {
+    align-items: center;
+}
